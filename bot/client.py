@@ -15,6 +15,7 @@ class DeathClown(discord.Client):
     async def setup_hook(self):
         setup_ping(self.tree)
         setup_composicoes(self.tree)
+        setup_createEvents(self.tree)
 
         guild = discord.Object(id=GUILD_ID)
         self.tree.copy_global_to(guild=guild)
