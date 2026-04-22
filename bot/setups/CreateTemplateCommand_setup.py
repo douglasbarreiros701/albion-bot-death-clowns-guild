@@ -1,5 +1,8 @@
 import discord
 from discord import app_commands
+from discord.ui import view
+
+from bot.setups import TemplateInteractionHandler
 
 
 class CreateTemplateCommand:
@@ -12,4 +15,5 @@ class CreateTemplateCommand:
             await interaction.response.send_message('Digite o nome do evento', ephemeral=True)
             #interaction!!!!1
 
-            handler =
+            handler = TemplateInteractionHandler(interaction)
+            await handler.coletar_nome_evento()
